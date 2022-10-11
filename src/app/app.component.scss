@@ -1,0 +1,10 @@
+.container {
+  display: block;
+  width: 100vw;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 24px 16px 48px;
+  box-sizing: border-box;
+}

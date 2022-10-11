@@ -1,0 +1,32 @@
+<div class="wrap" [ngClass]="{ 'timezone--selected': isSelectedTimeZone() }">
+  <select #selectionList (change)="changeTimeZone(selectionList.value)">
+    <option
+      *ngFor="let timeZone of timeZones"
+      [value]="timeZone"
+      [selected]="timeZone === thisTimeZone"
+    >
+      {{ timeZone }}
+    </option>
+  </select>
+
+  <p>
+    {{ timeInTimeZone | date: "YYYY MMMM dd HH:mm:ss" }}
+  </p>
+
+  <button
+    type="button"
+    (click)="refreshTime()"
+    [style]="{ margin: '8px', 'user-select': 'none' }"
+  >
+    Refresh
+  </button>
+  <button
+    type="button"
+    [disabled]="isSelectedTimeZone()"
+    [style]="{ margin: '8px', 'user-select': 'none' }"
+    [innerHTML]="
+      isSelectedTimeZone() ? 'Actual timezone' : 'Select as actual timezone'
+    "
+    (click)="selectAsCurrentTimeZone(this.thisTimeZone)"
+  ></button>
+</div>
