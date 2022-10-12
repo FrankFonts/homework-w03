@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { timeZoneList } from './../timeZoneList';
 
 @Component({
   selector: 'app-timezone',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 export class TimezoneComponent implements OnInit {
   @Input() thisTimeZone: string = '';
   @Input() selectedTimeZone: string = '';
-  @Input() timeZones: Array<Object> = [];
+  timeZones: Array<Object> = timeZoneList;
 
   timeInTimeZone: string = '';
 

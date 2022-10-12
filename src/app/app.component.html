@@ -21,9 +21,8 @@
 
   <app-timezone
     *ngFor="let timeZone of timeZoneArray"
-    [thisTimeZone]="timeZones[0]"
+    [thisTimeZone]="timeZoneList[0]"
     [selectedTimeZone]="selectedTimeZone"
-    [timeZones]="timeZones"
     (timeZoneChange)="setSelectedTimeZone($event)"
   ></app-timezone>
 </div>
